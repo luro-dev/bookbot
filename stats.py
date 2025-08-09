@@ -13,3 +13,17 @@ def get_num_characters_in_book(book_words):
         else:
             character_count[character] += 1
     return character_count
+
+def dict_to_sorted_list(dictonary_of_character_counts):
+    def dict_sorted_by_character_count(dictionary):
+        return max(dictionary.values())
+
+    letter_counts = []
+
+    for key, value in dictonary_of_character_counts.items():
+        letter_counts.append({key: value})
+
+    letter_counts.sort(key=dict_sorted_by_character_count, reverse=True)
+
+    return letter_counts
+    
